@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Sanctum Tattoo Studio — Custom tattoos & piercing in West Bridgford, Nottingham. 5.0 stars. Women-owned. LGBTQ+ friendly."/>
+<title>Sanctum — Nottingham Tattoo Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:     #111009;
+  --bg2:    #181510;
+  --bg3:    #1F1B14;
+  --cream:  #F0E6CE;
+  --cream2: #D4C6A6;
+  --gold:   #C4922A;
+  --gold2:  #E8B84B;
+  --muted:  #7A7060;
+  --rule:   rgba(196,146,42,0.18);
+  --rule2:  rgba(240,230,206,0.07);
+}
+html{scroll-behavior:smooth}
+body{
+  background-color: var(--bg);
+  /* ── TATTOO THEME BACKGROUND ── */
+  /* Added a subtle fine-line SVG pattern (Floral/Geometric) */
+  background-image: 
+    linear-gradient(rgba(17, 16, 9, 0.94), rgba(17, 16, 9, 0.94)),
+    url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C4922A' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M200 50c-15 0-25 15-25 30 0 10 5 20 15 25-10 5-15 15-15 25 0 15 10 30 25 30s25-15 25-30c0-10-5-20-15-25 10-5 15-15 15-25 0-15-10-30-25-30zm0 10c10 0 15 10 15 20s-5 20-15 20-15-10-15-20 5-20 15-20zm0 60c-10 0-15-10-15-20s5-20 15-20 15 10 15 20-5 20-15 20zM50 200c0-15 15-25 30-25 10 0 20 5 25 15 5-10 15-15 25-15 15 0 30 10 30 25s-15 25-30 25c-10 0-20-5-25-15-5 10-15 15-25 15-15 0-30-10-30-25zm10 0c0 10 10 15 20 15s20-5 20-15-10-15-20-15-20 5-20 15zm60 0c0-10-10-15-20-15s-20 5-20 15 10 15 20 15 20-5 20-15z'/%3E%3Ccircle cx='300' cy='300' r='2'/%3E%3Ccircle cx='100' cy='300' r='1'/%3E%3Ccircle cx='300' cy='100' r='1.5'/%3E%3Cpath d='M350 200l-10-10h-20l-10 10 10 10h20z'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  color:var(--cream);
+  font-family:'Outfit',sans-serif;
+  font-weight:300;
+  font-size:16px;
+  line-height:1.65;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+
+/* ── TYPOGRAPHY ── */
+.display{font-family:'Cormorant',serif}
+.tag{
+  font-family:'Outfit',sans-serif;
+  font-size:10px;font-weight:600;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:30px 60px;
+  transition:padding .4s,background .4s;
+}
+nav.stuck{
+  background:rgba(17,16,9,.95);
+  backdrop-filter:blur(10px);
+  padding:18px 60px;
+  border-bottom:1px solid var(--rule2);
+}
+.nav-logo{
+  font-family:'Cormorant',serif;
+  font-size:20px;font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--cream);
+}
+.nav-logo em{font-style:italic;font-weight:300;color:var(--gold)}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{
+  font-size:11px;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);transition:color .2s;
+}
+.nav-links a:hover{color:var(--cream)}
+.nav-book{
+  font-size:10px;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;
+  border:1px solid var(--gold);
+  color:var(--gold);padding:11px 26px;
+  transition:all .25s;
+}
+.nav-book:hover{background:var(--gold);color:var(--bg)}
+
+/* ── HERO ── */
+#hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  justify-content:flex-end;
+  padding:0 60px 80px;
+  position:relative;overflow:hidden;
+}
+.hero-bg-text{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-54%);
+  font-family:'Cormorant',serif;
+  font-size:clamp(200px,28vw,420px);
+  font-weight:300;font-style:italic;
+  color:rgba(240,230,206,0.025);
+  white-space:nowrap;
+  pointer-events:none;user-select:none;
+  letter-spacing:-.02em;line-height:1;
+}
+.hero-top-bar{
+  position:absolute;top:0;left:0;right:0;
+  height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  opacity:.4;
+}
+.hero-content{position:relative;z-index:2}
+.hero-location{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:36px;
+  opacity:0;animation:up .7s ease .2s forwards;
+}
+.hero-location .line{width:32px;height:1px;background:var(--gold);opacity:.6}
+.hero-title{
+  font-family:'Cormorant',serif;
+  font-size:clamp(72px,10vw,148px);
+  font-weight:300;line-height:.9;
+  letter-spacing:-.01em;
+  margin-bottom:48px;
+  opacity:0;animation:up .9s ease .35s forwards;
+}
+.hero-title .row2{
+  display:flex;align-items:baseline;gap:24px;
+  font-style:italic;
+}
+.hero-title .row2 .amp{
+  font-size:.22em;font-weight:400;font-style:normal;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);align-self:center;
+}
+.hero-title .row2 .sub{
+  font-size:.26em;font-weight:400;font-style:normal;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--cream2);
+}
+.hero-bottom{
+  display:flex;align-items:flex-end;
+  justify-content:space-between;gap:40px;flex-wrap:wrap;
+  opacity:0;animation:up .8s ease .6s forwards;
+}
+.hero-desc{
+  max-width:400px;
+  font-size:15px;font-weight:300;
+  color:var(--muted);line-height:1.8;
+}
+.hero-desc strong{color:var(--cream2);font-weight:400}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.btn-gold{
+  font-size:10px;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;
+  background:var(--gold);color:var(--bg);
+  padding:15px 36px;transition:background .25s;
+}
+.btn-gold:hover{background:var(--gold2)}
+.btn-ghost-cream{
+  font-size:10px;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;
+  border:1px solid rgba(240,230,206,.25);
+  color:var(--cream2);padding:14px 36px;
+  transition:all .25s;
+}
+.btn-ghost-cream:hover{border-color:var(--cream);color:var(--cream)}
+
+/* ── TICKER STRIP ── */
+.ticker{
+  border-top:1px solid var(--rule2);
+  border-bottom:1px solid var(--rule2);
+  padding:14px 0;
+  overflow:hidden;white-space:nowrap;
+  background:var(--bg2);
+}
+.ticker-inner{
+  display:inline-flex;animation:ticker 28s linear infinite;
+  gap:0;
+}
+.ticker-item{
+  display:inline-flex;align-items:center;gap:20px;
+  padding:0 40px;
+  font-size:11px;font-weight:500;
+  letter-spacing:.15em;text-transform:uppercase;
+  color:var(--muted);
+}
+.ticker-item .dot{width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── SECTION SHELL ── */
+.section{padding:100px 60px}
+.section-inner{max-width:1200px;margin:0 auto}
+
+/* ── ABOUT ── */
+#about{background:transparent} /* Set to transparent to show body pattern */
+.about-wrap{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:0;align-items:stretch;
+}
+.about-left{
+  padding:0 64px 0 0;
+  border-right:1px solid var(--rule2);
+  display:flex;flex-direction:column;justify-content:center;
+}
+.about-eyebrow{
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:28px;
+}
+.about-eyebrow .bar{width:40px;height:1px;background:var(--gold)}
+.about-heading{
+  font-family:'Cormorant',serif;
+  font-size:clamp(42px,5.5vw,68px);
+  font-weight:300;line-height:1.05;
+  margin-bottom:32px;
+}
+.about-heading em{font-style:italic;color:var(--cream2)}
+.about-body{
+  font-size:15.5px;font-weight:300;
+  color:var(--muted);line-height:1.85;
+}
+.about-body p+p{margin-top:16px}
+.about-body strong{color:var(--cream2);font-weight:400}
+.about-pillars{
+  margin-top:44px;
+  display:flex;flex-direction:column;gap:0;
+  border-top:1px solid var(--rule2);
+}
+.pillar{
+  display:flex;gap:20px;align-items:flex-start;
+  padding:20px 0;
+  border-bottom:1px solid var(--rule2);
+  transition:background .2s;
+}
+.pillar-num{
+  font-family:'Cormorant',serif;
+  font-size:13px;font-weight:500;
+  color:var(--gold);min-width:28px;
+  padding-top:3px;letter-spacing:.08em;
+}
+.pillar-text h4{
+  font-size:12px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--cream2);margin-bottom:4px;
+}
+.pillar-text p{font-size:13.5px;color:var(--muted)}
+
+.about-right{
+  padding:0 0 0 64px;
+  display:flex;flex-direction:column;gap:16px;
+}
+.img-box{
+  flex:1;
+  background:var(--bg3);
+  border:1px solid var(--rule2);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;min-height:200px;
+}
+.img-box::after{
+  content:attr(data-caption);
+  font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);
+}
+.img-box .img-corner{
+  position:absolute;width:14px;height:14px;
+  border-color:var(--gold);border-style:solid;opacity:.3;
+}
+.img-box .img-corner.tl{top:10px;left:10px;border-width:1px 0 0 1px}
+.img-box .img-corner.tr{top:10px;right:10px;border-width:1px 1px 0 0}
+.img-box .img-corner.bl{bottom:10px;left:10px;border-width:0 0 1px 1px}
+.img-box .img-corner.br{bottom:10px;right:10px;border-width:0 1px 1px 0}
+
+/* ── STATS ROW ── */
+.stats-row{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--rule2);
+  border-bottom:1px solid var(--rule2);
+  background:var(--bg2);
+  backdrop-filter: blur(5px);
+}
+.stat-block{
+  padding:40px 32px;
+  border-right:1px solid var(--rule2);
+  text-align:center;
+}
+.stat-block:last-child{border-right:none}
+.stat-num{
+  font-family:'Cormorant',serif;
+  font-size:52px;font-weight:300;
+  color:var(--cream);line-height:1;
+  margin-bottom:6px;
+}
+.stat-num sup{font-size:.45em;color:var(--gold);vertical-align:super}
+.stat-label{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* ── ARTISTS ── */
+#artists{background:rgba(24, 21, 16, 0.85); backdrop-filter: blur(8px);}
+.artists-intro{
+  display:grid;grid-template-columns:1fr 1fr;gap:40px;
+  align-items:end;margin-bottom:60px;
+}
+.artists-intro h2{
+  font-family:'Cormorant',serif;
+  font-size:clamp(44px,6vw,72px);
+  font-weight:300;line-height:.95;
+}
+.artists-intro h2 em{font-style:italic;color:var(--cream2)}
+.artists-intro p{
+  font-size:15px;color:var(--muted);
+  line-height:1.8;font-weight:300;
+  font-style:italic;font-family:'Cormorant',serif;
+  align-self:end;
+}
+.artists-cards{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+.artist-c{
+  background:var(--bg3);
+  border:1px solid var(--rule2);
+  padding:32px 24px;
+  transition:border-color .3s,transform .3s;
+  position:relative;overflow:hidden;
+}
+.artist-c:hover{border-color:rgba(196,146,42,.45);transform:translateY(-4px)}
+.artist-c::before{
+  content:'';position:absolute;
+  bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  opacity:0;transition:opacity .3s;
+}
+.artist-c:hover::before{opacity:1}
+.artist-init{
+  width:64px;height:64px;
+  background:var(--bg2);border:1px solid var(--rule);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant',serif;
+  font-size:26px;font-weight:300;font-style:italic;
+  color:var(--gold2);margin-bottom:22px;
+  transition:border-color .3s;
+}
+.artist-c:hover .artist-init{border-color:var(--gold)}
+.artist-n{
+  font-family:'Cormorant',serif;
+  font-size:26px;font-weight:400;
+  color:var(--cream);line-height:1;margin-bottom:4px;
+}
+.artist-role-tag{
+  font-size:10px;font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px;
+}
+.artist-bio-s{font-size:13px;color:var(--muted);line-height:1.65}
+.artist-chips{
+  display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;
+}
+.chip{
+  font-size:9px;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;
+  border:1px solid var(--rule2);color:var(--muted);
+  padding:4px 10px;transition:all .2s;
+}
+.artist-c:hover .chip{border-color:rgba(196,146,42,.3);color:var(--cream2)}
+
+/* ── SERVICES ── */
+#services{background:transparent}
+.services-intro{
+  text-align:center;margin-bottom:64px;
+}
+.services-intro h2{
+  font-family:'Cormorant',serif;
+  font-size:clamp(48px,7vw,86px);
+  font-weight:300;line-height:.95;margin-top:12px;
+}
+.services-intro h2 em{font-style:italic;color:var(--cream2)}
+.services-intro p{
+  font-size:16px;color:var(--muted);
+  max-width:500px;margin:20px auto 0;
+  font-family:'Cormorant',serif;font-style:italic;font-weight:300;
+}
+.services-cards{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--rule2);border:1px solid var(--rule2);
+}
+.svc{
+  background:rgba(17,16,9,0.8);
+  backdrop-filter: blur(10px);
+  padding:48px 36px;
+  position:relative;overflow:hidden;
+  transition:background .3s;
+}
+.svc:hover{background:var(--bg2)}
+.svc-num{
+  font-family:'Cormorant',serif;
+  font-size:72px;font-weight:300;font-style:italic;
+  color:rgba(196,146,42,.1);
+  position:absolute;top:16px;right:20px;line-height:1;
+}
+.svc-icon{
+  width:40px;height:40px;border:1px solid var(--rule);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;margin-bottom:24px;color:var(--gold);
+  transition:border-color .3s,background .3s;
+}
+.svc:hover .svc-icon{border-color:var(--gold);background:rgba(196,146,42,.08)}
+.svc-name{
+  font-family:'Cormorant',serif;
+  font-size:32px;font-weight:400;
+  color:var(--cream);line-height:1;margin-bottom:6px;
+}
+.svc-sub{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.svc-desc{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:28px}
+.svc-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.svc-list li{
+  font-size:12.5px;color:var(--muted);
+  display:flex;align-items:center;gap:10px;
+}
+.svc-list li::before{content:'—';color:var(--gold);font-weight:300;flex-shrink:0}
+.svc-link{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);margin-top:28px;
+  border-bottom:1px solid rgba(196,146,42,.35);padding-bottom:2px;
+  transition:gap .2s,border-color .2s;
+}
+.svc-link:hover{gap:14px;border-color:var(--gold)}
+
+/* ── GALLERY ── */
+#gallery{background:rgba(24, 21, 16, 0.9); backdrop-filter: blur(10px); padding-bottom:0}
+.gallery-head{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:48px;flex-wrap:wrap;gap:20px;
+}
+.gallery-head h2{
+  font-family:'Cormorant',serif;
+  font-size:clamp(48px,7vw,88px);
+  font-weight:300;line-height:.9;
+}
+.gallery-head h2 span{display:block;font-style:italic;font-size:.5em;color:var(--cream2);margin-bottom:4px}
+.gallery-ig{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  border:1px solid var(--rule);color:var(--cream2);
+  padding:12px 24px;transition:all .25s;
+}
+.gallery-ig:hover{border-color:var(--gold);color:var(--gold)}
+.gallery-strip{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1.5fr;
+  grid-template-rows:320px 220px;
+  gap:3px;background:var(--rule2);
+}
+.gp{
+  background:var(--bg3);
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;cursor:pointer;position:relative;
+  transition:opacity .3s;
+}
+.gp:hover{opacity:.8}
+.gp-lbl{
+  font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+}
+.gp:nth-child(1){grid-row:span 2}
+.gp:nth-child(5){grid-column:span 2}
+.gallery-footer{
+  padding:24px 0;
+  text-align:center;
+  border-top:1px solid var(--rule2);
+  margin-top:0;
+}
+.gallery-footer p{
+  font-family:'Cormorant',serif;font-style:italic;
+  font-size:17px;color:var(--muted);
+}
+.gallery-footer a{color:var(--cream2);text-decoration:underline;text-decoration-color:var(--rule)}
+
+/* ── REVIEWS ── */
+#reviews{background:transparent}
+.reviews-head{
+  text-align:center;margin-bottom:64px;
+}
+.reviews-head h2{
+  font-family:'Cormorant',serif;
+  font-size:clamp(44px,6vw,76px);
+  font-weight:300;line-height:.95;margin-top:12px;
+}
+.reviews-head h2 em{font-style:italic;color:var(--cream2)}
+.review-score{
+  display:flex;align-items:center;gap:16px;
+  justify-content:center;margin-top:24px;
+}
+.score-num{
+  font-family:'Cormorant',serif;
+  font-size:56px;font-weight:300;
+  color:var(--cream);line-height:1;
+}
+.score-detail{}
+.stars-gold{color:var(--gold2);font-size:16px;letter-spacing:3px}
+.score-count{font-size:12px;color:var(--muted);margin-top:4px;letter-spacing:.08em}
+
+.reviews-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.rev-c{
+  background:rgba(24, 21, 16, 0.85); 
+  backdrop-filter: blur(10px);
+  border:1px solid var(--rule2);
+  padding:32px 28px;transition:border-color .3s;
+}
+.rev-c:hover{border-color:rgba(196,146,42,.3)}
+.rev-stars{color:var(--gold2);font-size:13px;letter-spacing:2px;margin-bottom:18px}
+.rev-q{
+  font-family:'Cormorant',serif;
+  font-style:italic;font-weight:300;
+  font-size:18px;line-height:1.6;
+  color:var(--cream2);margin-bottom:22px;
+}
+.rev-meta{
+  display:flex;justify-content:space-between;
+  padding-top:16px;border-top:1px solid var(--rule2);
+}
+.rev-name{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--cream)}
+.rev-date{font-size:11px;color:var(--muted)}
+.reviews-cta{text-align:center;margin-top:44px}
+.reviews-cta a{
+  font-size:11px;font-weight:500;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);
+  border-bottom:1px solid var(--rule2);padding-bottom:3px;
+  transition:all .2s;
+}
+.reviews-cta a:hover{color:var(--cream);border-color:var(--cream)}
+
+/* ── AFTERCARE ── */
+#aftercare{background:rgba(24, 21, 16, 0.9); backdrop-filter: blur(10px);}
+.aftercare-layout{
+  display:grid;grid-template-columns:320px 1fr;gap:80px;
+}
+.aftercare-left{}
+.aftercare-left h2{
+  font-family:'Cormorant',serif;
+  font-size:clamp(44px,5.5vw,64px);
+  font-weight:300;line-height:1;margin-top:12px;
+}
+.aftercare-left h2 em{font-style:italic;color:var(--cream2)}
+.aftercare-left p{
+  font-size:15px;color:var(--muted);line-height:1.8;margin-top:20px;
+}
+.aftercare-left a{
+  display:inline-block;margin-top:32px;
+  font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  background:var(--gold);color:var(--bg);padding:13px 28px;
+  transition:background .25s;
+}
+.aftercare-left a:hover{background:var(--gold2)}
+.aftercare-steps{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:var(--rule2);border:1px solid var(--rule2);
+  align-self:start;
+}
+.ac{
+  background:var(--bg2);padding:28px 24px;
+  transition:background .25s;position:relative;overflow:hidden;
+}
+.ac:hover{background:var(--bg3)}
+.ac-big{
+  position:absolute;bottom:-8px;right:-4px;
+  font-family:'Cormorant',serif;font-size:80px;font-weight:300;
+  color:rgba(196,146,42,.06);line-height:1;pointer-events:none;
+}
+.ac-t{
+  font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:10px;
+}
+.ac-d{font-size:13px;color:var(--muted);line-height:1.65}
+
+/* ── FAQ ── */
+#faq{background:transparent}
+.faq-layout{
+  display:grid;grid-template-columns:1fr 1.3fr;gap:100px;
+}
+.faq-l{}
+.faq-l h2{
+  font-family:'Cormorant',serif;
+  font-size:clamp(40px,5vw,60px);font-weight:300;line-height:1;
+  margin-top:12px;
+}
+.faq-l h2 em{font-style:italic;color:var(--cream2)}
+.faq-l p{font-size:15px;color:var(--muted);line-height:1.8;margin-top:18px}
+.faq-l a{
+  display:inline-block;margin-top:28px;
+  font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  border:1px solid var(--rule);color:var(--cream2);padding:12px 24px;
+  transition:all .25s;
+}
+.faq-l a:hover{border-color:var(--gold);color:var(--gold)}
+.faq-r{}
+.faq-item{border-bottom:1px solid var(--rule2)}
+.faq-btn{
+  width:100%;background:none;border:none;cursor:pointer;
+  padding:20px 0;text-align:left;
+  display:flex;justify-content:space-between;align-items:center;gap:20px;
+}
+.faq-btn-t{font-size:15px;font-weight:400;color:var(--cream2);line-height:1.3}
+.faq-ico{
+  width:26px;height:26px;border:1px solid var(--rule);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--muted);font-size:17px;flex-shrink:0;
+  transition:all .25s;
+}
+.faq-item.open .faq-ico{
+  background:var(--gold);border-color:var(--gold);
+  color:var(--bg);transform:rotate(45deg);
+}
+.faq-ans{
+  font-size:14px;color:var(--muted);line-height:1.75;
+  max-height:0;overflow:hidden;
+  transition:max-height .4s ease,padding .3s;
+}
+.faq-item.open .faq-ans{max-height:220px;padding-bottom:20px}
+
+/* ── CONTACT ── */
+#contact{background:rgba(24, 21, 16, 0.9); backdrop-filter: blur(10px); padding:0}
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr}
+.c-form-col{
+  padding:80px 60px;
+  border-right:1px solid var(--rule2);
+}
+.c-form-col h2{
+  font-family:'Cormorant',serif;
+  font-size:clamp(44px,5vw,68px);
+  font-weight:300;line-height:.95;margin-top:10px;margin-bottom:6px;
+}
+.c-form-col h2 em{font-style:italic;color:var(--cream2)}
+.c-form-col > p{
+  font-size:15px;color:var(--muted);
+  font-family:'Cormorant',serif;font-style:italic;
+  line-height:1.7;max-width:440px;margin:16px 0 40px;
+}
+form{display:flex;flex-direction:column;gap:0}
+.f{margin-bottom:20px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+label{
+  display:block;margin-bottom:7px;
+  font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);
+}
+input,textarea,select{
+  width:100%;
+  background:var(--bg);border:1px solid var(--rule2);
+  color:var(--cream);
+  font-family:'Outfit',sans-serif;font-size:14px;font-weight:300;
+  padding:13px 16px;outline:none;
+  transition:border-color .25s,background .25s;
+  -webkit-appearance:none;appearance:none;
+}
+input:focus,textarea:focus,select:focus{border-color:rgba(196,146,42,.5);background:var(--bg3)}
+input::placeholder,textarea::placeholder{color:var(--muted)}
+select option{background:var(--bg);color:var(--cream)}
+textarea{min-height:110px;resize:vertical}
+.f-submit{
+  margin-top:8px;align-self:flex-start;
+  background:var(--gold);color:var(--bg);border:none;
+  font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;
+  padding:16px 40px;cursor:pointer;transition:background .25s;
+}
+.f-submit:hover{background:var(--gold2)}
+.f-note{font-size:11px;color:var(--muted);margin-top:14px}
+.f-ok{
+  display:none;background:var(--bg3);border:1px solid var(--rule);
+  padding:24px;margin-top:20px;text-align:center;
+}
+.f-ok p{
+  font-family:'Cormorant',serif;font-style:italic;
+  font-size:18px;color:var(--cream2);
+}
+
+.c-info-col{
+  padding:80px 60px;background:var(--bg3);
+  display:flex;flex-direction:column;gap:44px;
+}
+.ci-title{
+  font-size:9px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:18px;
+  padding-bottom:12px;border-bottom:1px solid var(--rule2);
+}
+.ci-row{
+  display:flex;gap:16px;align-items:flex-start;
+  padding:13px 0;border-bottom:1px solid var(--rule2);
+}
+.ci-row:last-child{border-bottom:none}
+.ci-lbl{
+  font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--cream2);min-width:72px;flex-shrink:0;padding-top:2px;
+}
+.ci-v{font-size:14px;color:var(--muted);line-height:1.6}
+.ci-v a{color:var(--muted);transition:color .2s}
+.ci-v a:hover{color:var(--cream)}
+.hours-t{display:flex;flex-direction:column;gap:0}
+.h-r{
+  display:flex;justify-content:space-between;
+  padding:10px 0;border-bottom:1px solid var(--rule2);
+  font-size:13px;
+}
+.h-r:last-child{border-bottom:none}
+.h-d{color:var(--cream2);font-weight:400}
+.h-t{color:var(--muted);font-size:12px}
+.access-g{
+  display:grid;grid-template-columns:1fr 1fr;gap:8px;
+}
+.acc-i{
+  display:flex;align-items:center;gap:8px;
+  font-size:12px;color:var(--muted);
+}
+.acc-i::before{content:'';width:12px;height:1px;background:var(--gold);flex-shrink:0}
+
+/* ── MAP ── */
+.map-bar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 60px;
+  background:var(--bg);
+  border-top:1px solid var(--rule2);
+  border-bottom:1px solid var(--rule2);
+  flex-wrap:wrap;gap:12px;
+}
+.map-addr{font-size:13px;color:var(--muted)}
+.map-addr strong{color:var(--cream2);font-weight:400}
+.map-btns{display:flex;gap:10px}
+.mb{
+  font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  padding:10px 20px;transition:all .25s;
+}
+.mb-gold{background:var(--gold);color:var(--bg)}
+.mb-gold:hover{background:var(--gold2)}
+.mb-ghost{border:1px solid var(--rule2);color:var(--muted)}
+.mb-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.map-frame{height:420px;overflow:hidden}
+.map-frame iframe{width:100%;height:100%;border:none;filter:grayscale(60%) brightness(.7) contrast(1.1)}
+
+/* ── FOOTER ── */
+footer{background:var(--bg);padding:64px 60px 32px;border-top:1px solid var(--rule2)}
+.ft{
+  display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;
+  gap:48px;margin-bottom:48px;
+  padding-bottom:48px;border-bottom:1px solid var(--rule2);
+}
+.fb-logo{
+  font-family:'Cormorant',serif;
+  font-size:22px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--cream);display:block;margin-bottom:14px;
+}
+.fb-logo em{font-style:italic;color:var(--gold);font-weight:300}
+.fb p{font-size:14px;color:var(--muted);line-height:1.7;max-width:260px}
+.fb-links{display:flex;gap:10px;margin-top:20px}
+.fb-link{
+  width:34px;height:34px;border:1px solid var(--rule2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;color:var(--muted);transition:all .25s;
+}
+.fb-link:hover{border-color:var(--gold);color:var(--gold)}
+.fc h4{
+  font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:18px;
+}
+.fl{list-style:none;display:flex;flex-direction:column;gap:10px}
+.fl a{font-size:14px;color:var(--muted);transition:color .2s}
+.fl a:hover{color:var(--cream)}
+.fh{display:flex;flex-direction:column;gap:0}
+.fhr{
+  display:flex;justify-content:space-between;
+  padding:9px 0;border-bottom:1px solid var(--rule2);
+  font-size:13px;
+}
+.fhr:last-child{border-bottom:none}
+.fhd{color:var(--cream2);font-weight:300}
+.fht{color:var(--muted);font-size:12px}
+.fb-bottom{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;
+}
+.fb-bottom p{font-size:11px;color:var(--muted)}
+.fb-tags{display:flex;gap:8px;flex-wrap:wrap}
+.ftag{
+  font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);border:1px solid var(--rule2);padding:4px 10px;
+}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.reveal.vis{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}
+.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+/* ── ANIM ── */
+@keyframes up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  .artists-cards{grid-template-columns:repeat(2,1fr)}
+  .about-wrap{grid-template-columns:1fr}
+  .about-left{padding:0 0 56px;border-right:none;border-bottom:1px solid var(--rule2)}
+  .about-right{padding:48px 0 0}
+  .faq-layout{grid-template-columns:1fr;gap:40px}
+  .aftercare-layout{grid-template-columns:1fr;gap:40px}
+  .contact-wrap{grid-template-columns:1fr}
+  .c-form-col{border-right:none;border-bottom:1px solid var(--rule2)}
+}
+@media(max-width:900px){
+  nav{padding:20px 24px}
+  nav.stuck{padding:14px 24px}
+  .nav-links{display:none}
+  .section{padding:72px 24px}
+  .hero-title{font-size:clamp(64px,14vw,120px)}
+  #hero{padding:0 24px 60px}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .services-cards{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .gallery-strip{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .gp:nth-child(1){grid-row:span 1}
+  .gp:nth-child(5){grid-column:span 1}
+  .artists-cards{grid-template-columns:1fr}
+  .ft{grid-template-columns:1fr 1fr;gap:28px}
+  .map-bar{padding:16px 24px}
+  .c-form-col,.c-info-col{padding:56px 24px}
+}
+@media(max-width:600px){
+  .stats-row{grid-template-columns:1fr 1fr}
+  .aftercare-steps{grid-template-columns:1fr}
+  .ft{grid-template-columns:1fr}
+  .f2{grid-template-columns:1fr}
+  .artists-intro{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#" class="nav-logo">Sanctum <em>Studio</em></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#artists">Artists</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#aftercare">Aftercare</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#contact" class="nav-book">Book Enquiry</a>
+</nav>
+
+
+<section id="hero">
+  <div class="hero-top-bar"></div>
+  <div class="hero-bg-text">Sanctum</div>
+
+  <div class="hero-content">
+    <div class="hero-location">
+      <div class="line"></div>
+      <span class="tag">West Bridgford · Nottingham</span>
+    </div>
+
+    <h1 class="hero-title">
+      Tattoo<br>
+      <span class="row2">
+        & Piercing<span class="amp"></span>
+        <span class="sub">Studio</span>
+      </span>
+    </h1>
+
+    <div class="hero-bottom">
+      <p class="hero-desc">
+        Custom tattoo studio in Nottingham. <strong>Women-owned.</strong>
+        <strong>LGBTQ+ friendly.</strong> A space where your idea becomes something permanent and extraordinary.
+      </p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-gold">Book Enquiry</a>
+        <a href="#gallery" class="btn-ghost-cream">View Portfolio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item"><span class="dot"></span>5.0 Google Rating</span>
+    <span class="ticker-item"><span class="dot"></span>65 Verified Reviews</span>
+    <span class="ticker-item"><span class="dot"></span>Custom Tattoos</span>
+    <span class="ticker-item"><span class="dot"></span>Cover-Up Specialists</span>
+    <span class="ticker-item"><span class="dot"></span>Body Piercing</span>
+    <span class="ticker-item"><span class="dot"></span>Women-Owned Studio</span>
+    <span class="ticker-item"><span class="dot"></span>LGBTQ+ Friendly</span>
+    <span class="ticker-item"><span class="dot"></span>West Bridgford · Nottingham</span>
+    <span class="ticker-item"><span class="dot"></span>Wheelchair Accessible</span>
+    <span class="ticker-item"><span class="dot"></span>Free Parking</span>
+    <span class="ticker-item"><span class="dot"></span>5.0 Google Rating</span>
+    <span class="ticker-item"><span class="dot"></span>65 Verified Reviews</span>
+    <span class="ticker-item"><span class="dot"></span>Custom Tattoos</span>
+    <span class="ticker-item"><span class="dot"></span>Cover-Up Specialists</span>
+    <span class="ticker-item"><span class="dot"></span>Body Piercing</span>
+    <span class="ticker-item"><span class="dot"></span>Women-Owned Studio</span>
+    <span class="ticker-item"><span class="dot"></span>LGBTQ+ Friendly</span>
+    <span class="ticker-item"><span class="dot"></span>West Bridgford · Nottingham</span>
+    <span class="ticker-item"><span class="dot"></span>Wheelchair Accessible</span>
+    <span class="ticker-item"><span class="dot"></span>Free Parking</span>
+  </div>
+</div>
+
+
+<div class="stats-row reveal">
+  <div class="stat-block">
+    <div class="stat-num">5.0<sup>★</sup></div>
+    <div class="stat-label">Google Rating</div>
+  </div>
+  <div class="stat-block">
+    <div class="stat-num">65<sup>+</sup></div>
+    <div class="stat-label">Client Reviews</div>
+  </div>
+  <div class="stat-block">
+    <div class="stat-num">4<sup>+</sup></div>
+    <div class="stat-label">Resident Artists</div>
+  </div>
+  <div class="stat-block">
+    <div class="stat-num">8<sup>+</sup></div>
+    <div class="stat-label">Years Open</div>
+  </div>
+</div>
+
+
+<section id="about" class="section">
+  <div class="section-inner">
+    <div class="about-wrap">
+      <div class="about-left reveal">
+        <div class="about-eyebrow">
+          <div class="bar"></div>
+          <span class="tag">Our Studio</span>
+        </div>
+        <h2 class="about-heading">Where craft<br>becomes <em>art</em></h2>
+        <div class="about-body">
+          <p>Founded by <strong>Jay and Honour</strong>, Sanctum was built on one belief: getting tattooed should feel as thoughtful and personal as the art you leave with.</p>
+          <p>Located on <strong>Victoria Embankment in West Bridgford</strong>, our studio is meticulously clean, welcoming, and designed entirely around your comfort. Custom designs, cover-ups, and professional piercings — all made for you.</p>
+          <p>Sanctum is a <strong>women-owned</strong>, LGBTQ+ affirming space. Every client, every session, receives the same standard of care and craft.</p>
+        </div>
+        <div class="about-pillars">
+          <div class="pillar">
+            <div class="pillar-num">I</div>
+            <div class="pillar-text">
+              <h4>Custom & Collaborative Design</h4>
+              <p>We work with you at every stage until the design is exactly right before anything begins.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">II</div>
+            <div class="pillar-text">
+              <h4>Clinical Cleanliness</h4>
+              <p>A spotlessly clean environment — described by clients as "the cleanest studio in Nottingham."</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">III</div>
+            <div class="pillar-text">
+              <h4>Aftercare Support</h4>
+              <p>We stay available after your session. Healing guidance is standard — not optional.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">IV</div>
+            <div class="pillar-text">
+              <h4>Inclusive, Safe Space</h4>
+              <p>Proudly LGBTQ+ friendly and transgender affirming. Everyone belongs here.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-right reveal d2">
+        <div class="img-box" style="flex:1.6;min-height:340px" data-caption="Studio Interior">
+          <div class="img-corner tl"></div><div class="img-corner tr"></div>
+          <div class="img-corner bl"></div><div class="img-corner br"></div>
+        </div>
+        <div class="img-box" style="flex:1;min-height:200px" data-caption="At Work">
+          <div class="img-corner tl"></div><div class="img-corner tr"></div>
+          <div class="img-corner bl"></div><div class="img-corner br"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="artists" class="section">
+  <div class="section-inner">
+    <div class="artists-intro reveal">
+      <div>
+        <span class="tag">The Team</span>
+        <h2>Meet the<br><em>artists</em></h2>
+      </div>
+      <p>Each artist brings a distinct voice. Browse their styles and book with whoever resonates most with your vision.</p>
+    </div>
+    <div class="artists-cards">
+      <div class="artist-c reveal">
+        <div class="artist-init">J</div>
+        <div class="artist-n">Jason (Jay)</div>
+        <div class="artist-role-tag">Co-Founder · Tattoo Artist</div>
+        <p class="artist-bio-s">Co-founder of Sanctum. Known for warmth, precision, and the rare ability to turn even a rough idea into something extraordinary. Clients return for him again and again.</p>
+        <div class="artist-chips">
+          <span class="chip">Custom</span>
+          <span class="chip">Cover-ups</span>
+          <span class="chip">Fine Line</span>
+          <span class="chip">Realism</span>
+        </div>
+      </div>
+      <div class="artist-c reveal d1">
+        <div class="artist-init">H</div>
+        <div class="artist-n">Honour</div>
+        <div class="artist-role-tag">Co-Founder · Tattoo Artist</div>
+        <p class="artist-bio-s">Honour co-founded Sanctum and brings a deeply personal, illustrative approach to every piece. Her patience and attention to detail have earned a devoted following.</p>
+        <div class="artist-chips">
+          <span class="chip">Illustrative</span>
+          <span class="chip">Floral</span>
+          <span class="chip">Blackwork</span>
+          <span class="chip">Fine Detail</span>
+        </div>
+      </div>
+      <div class="artist-c reveal d2">
+        <div class="artist-init">T</div>
+        <div class="artist-n">Tom</div>
+        <div class="artist-role-tag">Tattoo Artist</div>
+        <p class="artist-bio-s">Tom checks in throughout every session, making even long appointments comfortable. His clean, bold work has quickly made him a client favourite at the studio.</p>
+        <div class="artist-chips">
+          <span class="chip">Bold Work</span>
+          <span class="chip">Traditional</span>
+          <span class="chip">Neo-Trad</span>
+        </div>
+      </div>
+      <div class="artist-c reveal d3">
+        <div class="artist-init">I</div>
+        <div class="artist-n">Imi</div>
+        <div class="artist-role-tag">Piercing Specialist</div>
+        <p class="artist-bio-s">Imi leads all piercing at Sanctum. Professional, friendly, and thorough — he provides clear aftercare guidance and makes the experience easy for first-timers.</p>
+        <div class="artist-chips">
+          <span class="chip">Body Piercing</span>
+          <span class="chip">Ear Curation</span>
+          <span class="chip">Aftercare</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="services" class="section">
+  <div class="section-inner">
+    <div class="services-intro reveal">
+      <span class="tag">What We Do</span>
+      <h2>Our <em>services</em></h2>
+      <p>All sessions by appointment only. Every piece is made entirely for you — no flash, no templates.</p>
+    </div>
+    <div class="services-cards">
+      <div class="svc reveal">
+        <div class="svc-num">I</div>
+        <div class="svc-icon">✦</div>
+        <div class="svc-name">Custom Tattoos</div>
+        <div class="svc-sub">Design · Placement · Execution</div>
+        <p class="svc-desc">From rough idea to fully realised piece. We collaborate on design at every stage — placement advice, sizing, style — until it is exactly what you envisioned.</p>
+        <ul class="svc-list">
+          <li>Free design consultation</li>
+          <li>All sizes: small to full sleeve</li>
+          <li>Multi-session pieces welcome</li>
+          <li>Placement guidance included</li>
+        </ul>
+        <a href="#contact" class="svc-link">Book Now →</a>
+      </div>
+      <div class="svc reveal d1">
+        <div class="svc-num">II</div>
+        <div class="svc-icon">◈</div>
+        <div class="svc-name">Cover-Up Tattoos</div>
+        <div class="svc-sub">Transform · Redesign · Renew</div>
+        <p class="svc-desc">Breathing new life into old ink. Our artists approach every cover-up creatively — results consistently exceed what clients expect.</p>
+        <ul class="svc-list">
+          <li>Assessment of existing tattoo</li>
+          <li>Custom cover design created</li>
+          <li>Reworks & touch-ups available</li>
+          <li>Complex cover-ups welcome</li>
+        </ul>
+        <a href="#contact" class="svc-link">Book Now →</a>
+      </div>
+      <div class="svc reveal d2">
+        <div class="svc-num">III</div>
+        <div class="svc-icon">◌</div>
+        <div class="svc-name">Body Piercing</div>
+        <div class="svc-sub">Professional · Safe · Guided</div>
+        <p class="svc-desc">Professional piercing by specialist Imi. Implant-grade jewellery as standard, with full aftercare guidance every time. Welcoming to first-timers.</p>
+        <ul class="svc-list">
+          <li>Ear, nose & body piercings</li>
+          <li>Ear curation consultations</li>
+          <li>Implant-grade titanium jewellery</li>
+          <li>Full aftercare advice included</li>
+        </ul>
+        <a href="#contact" class="svc-link">Book Now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="gallery" class="section">
+  <div class="section-inner">
+    <div class="gallery-head reveal">
+      <h2><span>Recent</span>Work</h2>
+      <a href="https://instagram.com" target="_blank" class="gallery-ig">Follow on Instagram ↗</a>
+    </div>
+    <div class="gallery-strip">
+      <div class="gp"><span class="gp-lbl">Portfolio</span></div>
+      <div class="gp"><span class="gp-lbl">Fine Line</span></div>
+      <div class="gp"><span class="gp-lbl">Blackwork</span></div>
+      <div class="gp"><span class="gp-lbl">Cover-Up</span></div>
+      <div class="gp"><span class="gp-lbl">Detail Work</span></div>
+    </div>
+    <div class="gallery-footer">
+      <p>Replace placeholders with portfolio photography. Full portfolio on
+        <a href="https://instagram.com" target="_blank">@sanctumtattoonottingham</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<section id="reviews" class="section">
+  <div class="section-inner">
+    <div class="reviews-head reveal">
+      <span class="tag">What Clients Say</span>
+      <h2>Honest words from<br><em>real clients</em></h2>
+      <div class="review-score">
+        <div class="score-num">5.0</div>
+        <div class="score-detail">
+          <div class="stars-gold">★★★★★</div>
+          <div class="score-count">Based on 65 Google Reviews</div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="rev-c reveal">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-q">"He was absolutely fantastic. Checked in with me loads throughout. Extremely happy with the results. Couldn't recommend him more."</p>
+        <div class="rev-meta"><span class="rev-name">Lauren</span><span class="rev-date">1 month ago</span></div>
+      </div>
+      <div class="rev-c reveal d1">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-q">"Could not recommend this place more. Some of the loveliest people I've met. They make you feel so comfortable the moment you walk in."</p>
+        <div class="rev-meta"><span class="rev-name">Georgia Griffiths</span><span class="rev-date">3 years ago</span></div>
+      </div>
+      <div class="rev-c reveal d2">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-q">"I felt at ease as soon as I stepped in. Honour and Jay made my anxiety disappear instantly. Will definitely be returning and recommending everyone."</p>
+        <div class="rev-meta"><span class="rev-name">Lola Mae Clarke</span><span class="rev-date">2 years ago</span></div>
+      </div>
+      <div class="rev-c reveal">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-q">"The best tattoo studio in Nottingham. Jay and Honour are so warm. Nothing is rushed. The studio is spotless, the cleanest I've ever visited."</p>
+        <div class="rev-meta"><span class="rev-name">Katy</span><span class="rev-date">5 years ago</span></div>
+      </div>
+      <div class="rev-c reveal d1">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-q">"Honour captured a childhood photograph of my late Mother beautifully. The whole experience was handled with such sensitivity and skill."</p>
+        <div class="rev-meta"><span class="rev-name">Andreia Rodrigues</span><span class="rev-date">2 years ago</span></div>
+      </div>
+      <div class="rev-c reveal d2">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-q">"Spotlessly clean with amazing decor. Honour took her time and made sure everything was perfect before she started. 10/10, can't wait to go back."</p>
+        <div class="rev-meta"><span class="rev-name">Halle</span><span class="rev-date">3 years ago</span></div>
+      </div>
+    </div>
+    <div class="reviews-cta reveal">
+      <a href="https://maps.app.goo.gl/m9izKBFNcrJasdoR8" target="_blank">Read all 65 reviews on Google →</a>
+    </div>
+  </div>
+</section>
+
+
+<section id="aftercare" class="section">
+  <div class="section-inner">
+    <div class="aftercare-layout">
+      <div class="reveal">
+        <span class="tag">Healing Guide</span>
+        <h2>Tattoo<br><em>aftercare</em></h2>
+        <p>The work doesn't end when you leave the studio. Proper care protects your investment and keeps the detail sharp for years.</p>
+        <a href="#contact">Ask Us Anything →</a>
+      </div>
+      <div class="aftercare-steps reveal d2">
+        <div class="ac">
+          <div class="ac-big">01</div>
+          <div class="ac-t">Keep covered</div>
+          <p class="ac-d">Leave the wrap on for 2–4 hours after your session, or as your artist advises. Don't peek early.</p>
+        </div>
+        <div class="ac">
+          <div class="ac-big">02</div>
+          <div class="ac-t">Wash gently</div>
+          <p class="ac-d">Lukewarm water, fragrance-free soap. Pat dry with clean paper towel — never rub.</p>
+        </div>
+        <div class="ac">
+          <div class="ac-big">03</div>
+          <div class="ac-t">Moisturise daily</div>
+          <p class="ac-d">Thin layer of unscented lotion 2–3× per day. Avoid petroleum-based products like Vaseline.</p>
+        </div>
+        <div class="ac">
+          <div class="ac-big">04</div>
+          <div class="ac-t">Block the sun</div>
+          <p class="ac-d">No direct sunlight or tanning beds for 4 weeks. Once healed, always use SPF 50+.</p>
+        </div>
+        <div class="ac">
+          <div class="ac-big">05</div>
+          <div class="ac-t">No soaking</div>
+          <p class="ac-d">Avoid pools, hot tubs and long baths for 2–3 weeks. Showers are fine — just don't soak.</p>
+        </div>
+        <div class="ac">
+          <div class="ac-big">06</div>
+          <div class="ac-t">Don't pick</div>
+          <p class="ac-d">Peeling and itching is normal. Let it shed naturally to preserve the detail in your tattoo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="faq" class="section">
+  <div class="section-inner">
+    <div class="faq-layout">
+      <div class="faq-l reveal">
+        <span class="tag">FAQ</span>
+        <h2>Questions<br><em>answered.</em></h2>
+        <p>Can't find what you're looking for? Call or message us directly — we respond quickly.</p>
+        <a href="#contact">Get in Touch</a>
+      </div>
+      <div class="faq-r reveal d1">
+        <div class="faq-item">
+          <button class="faq-btn" onclick="faqToggle(this)">
+            <span class="faq-btn-t">Do I need an appointment?</span>
+            <div class="faq-ico">+</div>
+          </button>
+          <div class="faq-ans">Yes — all tattoo sessions and piercings are by appointment. This ensures your artist has time to prepare your custom design. Occasional walk-in slots may be available — call ahead to check.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" onclick="faqToggle(this)">
+            <span class="faq-btn-t">How much does a tattoo cost?</span>
+            <div class="faq-ico">+</div>
+          </button>
+          <div class="faq-ans">Pricing depends on size, placement, complexity, and time. We offer excellent quality at fair prices — multiple reviews specifically mention great value. A deposit is required to secure your booking. Get in touch for a quote.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" onclick="faqToggle(this)">
+            <span class="faq-btn-t">I'm nervous — is that okay?</span>
+            <div class="faq-ico">+</div>
+          </button>
+          <div class="faq-ans">Completely okay and extremely common. Our team specialises in putting nervous clients at ease. We check in throughout every session, take breaks whenever needed, and never rush. Many of our best reviews come from first-timers.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" onclick="faqToggle(this)">
+            <span class="faq-btn-t">Can you cover an old tattoo?</span>
+            <div class="faq-ico">+</div>
+          </button>
+          <div class="faq-ans">Yes — cover-up work is one of our specialities. We assess your existing tattoo and collaborate on a custom design that works over it. Results consistently exceed expectations. Not sure if it's possible? Just ask.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" onclick="faqToggle(this)">
+            <span class="faq-btn-t">What accessibility does the studio have?</span>
+            <div class="faq-ico">+</div>
+          </button>
+          <div class="faq-ans">Fully wheelchair accessible — car park, entrance, seating, and toilet. Gender-neutral toilets, free on-site parking, free Wi-Fi, and a proudly LGBTQ+ friendly and transgender safe space.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" onclick="faqToggle(this)">
+            <span class="faq-btn-t">Do you accept card payments?</span>
+            <div class="faq-ico">+</div>
+          </button>
+          <div class="faq-ans">Yes — all major credit and debit cards accepted. A deposit secures your appointment and is deducted from the final cost.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="contact">
+  <div class="contact-wrap">
+    <div class="c-form-col">
+      <span class="tag">Book With Us</span>
+      <h2>Get in <em>touch.</em></h2>
+      <p>Describe your vision and we'll reply within 24–48 hours to discuss, answer questions, and arrange a date.</p>
+      <form id="enqF" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="hidden" name="_subject" value="New enquiry — Sanctum Tattoo Studio"/>
+        <div class="f2">
+          <div><label for="fn">First Name</label><input type="text" id="fn" name="first_name" placeholder="First name" required/></div>
+          <div><label for="ln">Last Name</label><input type="text" id="ln" name="last_name" placeholder="Last name" required/></div>
+        </div>
+        <div class="f2">
+          <div><label for="em">Email</label><input type="email" id="em" name="email" placeholder="your@email.com" required/></div>
+          <div><label for="ph">Phone (optional)</label><input type="tel" id="ph" name="phone" placeholder="+44 ..."/></div>
+        </div>
+        <div class="f"><label for="sv">Service</label>
+          <select id="sv" name="service">
+            <option value="">— Select service —</option>
+            <option>Custom Tattoo</option><option>Cover-Up Tattoo</option>
+            <option>Touch-Up / Rework</option><option>Body Piercing</option>
+            <option>Consultation Only</option>
+          </select>
+        </div>
+        <div class="f"><label for="ar">Preferred Artist</label>
+          <select id="ar" name="artist">
+            <option value="">— No preference —</option>
+            <option>Jay</option><option>Honour</option>
+            <option>Tom</option><option>Imi (Piercing)</option>
+          </select>
+        </div>
+        <div class="f"><label for="mg">Your Idea</label>
+          <textarea id="mg" name="message" placeholder="Describe your tattoo — style, size, placement, and any references you have in mind..." required></textarea>
+        </div>
+        <button type="submit" class="f-submit">Send Enquiry →</button>
+        <p class="f-note">We reply within 24–48 hours. A deposit secures your booking date.</p>
+      </form>
+      <div class="f-ok" id="fOk">
+        <p>"Your enquiry has been received — we'll be in touch shortly."</p>
+      </div>
+    </div>
+    <div class="c-info-col">
+      <div>
+        <div class="ci-title">Studio Information</div>
+        <div class="ci-row"><span class="ci-lbl">Address</span><span class="ci-v">1–3 Victoria Embankment<br>West Bridgford, Nottingham NG2 2JY</span></div>
+        <div class="ci-row"><span class="ci-lbl">Phone</span><span class="ci-v"><a href="tel:+447540230526">+44 7540 230526</a></span></div>
+        <div class="ci-row"><span class="ci-lbl">Instagram</span><span class="ci-v"><a href="https://instagram.com" target="_blank">@sanctumtattoonottingham</a></span></div>
+        <div class="ci-row"><span class="ci-lbl">Parking</span><span class="ci-v">Free on-site car park</span></div>
+      </div>
+      <div>
+        <div class="ci-title">Opening Hours</div>
+        <div class="hours-t">
+          <div class="h-r"><span class="h-d">Monday – Friday</span><span class="h-t">By appointment</span></div>
+          <div class="h-r"><span class="h-d">Saturday</span><span class="h-t">By appointment</span></div>
+          <div class="h-r"><span class="h-d">Sunday</span><span class="h-t">By appointment</span></div>
+        </div>
+        <p style="font-size:12px;color:var(--muted);margin-top:12px;font-style:italic">All sessions are appointment-only.</p>
+      </div>
+      <div>
+        <div class="ci-title">Accessibility & Amenities</div>
+        <div class="access-g">
+          <div class="acc-i">Wheelchair Access</div><div class="acc-i">Accessible Parking</div>
+          <div class="acc-i">Accessible Toilet</div><div class="acc-i">Gender-Neutral WC</div>
+          <div class="acc-i">Free Wi-Fi</div><div class="acc-i">Card Payments</div>
+          <div class="acc-i">LGBTQ+ Friendly</div><div class="acc-i">Trans Safe Space</div>
+          <div class="acc-i">Women-Owned</div><div class="acc-i">Free Parking</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div>
+  <div class="map-bar">
+    <p class="map-addr"><strong>Sanctum Tattoo Studio</strong> · 1–3 Victoria Embankment, West Bridgford, Nottingham NG2 2JY</p>
+    <div class="map-btns">
+      <a href="https://maps.app.goo.gl/m9izKBFNcrJasdoR8" target="_blank" class="mb mb-gold">Open in Maps</a>
+      <a href="https://maps.app.goo.gl/m9izKBFNcrJasdoR8" target="_blank" class="mb mb-ghost">Directions</a>
+    </div>
+  </div>
+  <div class="map-frame">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2403.0!2d-1.1304!3d52.9387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879c1b13e3e0e41%3A0xc9b7e86e08e9e14b!2sSanctum%20Tattoo%20Studio!5e0!3m2!1sen!2suk!4v1711825200000!5m2!1sen!2suk"
+      loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Sanctum location"></iframe>
+  </div>
+</div>
+
+
+<footer>
+  <div class="ft">
+    <div class="fb">
+      <span class="fb-logo">Sanctum <em>Studio</em></span>
+      <p>Custom tattoo studio and piercing specialists. Women-owned. LGBTQ+ affirming. West Bridgford, Nottingham.</p>
+      <div class="fb-links">
+        <a href="https://instagram.com" target="_blank" class="fb-link">📷</a>
+        <a href="tel:+447540230526" class="fb-link">📞</a>
+        <a href="https://maps.app.goo.gl/m9izKBFNcrJasdoR8" target="_blank" class="fb-link">📍</a>
+      </div>
+    </div>
+    <div class="fc">
+      <h4>Studio</h4>
+      <ul class="fl">
+        <li><a href="#about">About</a></li>
+        <li><a href="#artists">Our Artists</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Information</h4>
+      <ul class="fl">
+        <li><a href="#aftercare">Aftercare Guide</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Book Enquiry</a></li>
+        <li><a href="https://maps.app.goo.gl/m9izKBFNcrJasdoR8" target="_blank">Find Us</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Hours</h4>
+      <div class="fh">
+        <div class="fhr"><span class="fhd">Mon–Fri</span><span class="fht">By Appt.</span></div>
+        <div class="fhr"><span class="fhd">Saturday</span><span class="fht">By Appt.</span></div>
+        <div class="fhr"><span class="fhd">Sunday</span><span class="fht">By Appt.</span></div>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-top:14px"><a href="tel:+447540230526" style="color:var(--muted)">+44 7540 230526</a></p>
+    </div>
+  </div>
+  <div class="fb-bottom">
+    <p>© 2025 Sanctum Tattoo Studio · 1–3 Victoria Embankment, West Bridgford, Nottingham NG2 2JY</p>
+    <div class="fb-tags">
+      <span class="ftag">★ 5.0 Rated</span>
+      <span class="ftag">Women-Owned</span>
+      <span class="ftag">LGBTQ+ Friendly</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('stuck', scrollY > 60));
+
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+function faqToggle(btn) {
+  const item = btn.closest('.faq-item');
+  const was = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if(!was) item.classList.add('open');
+}
+
+document.getElementById('enqF').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('.f-submit');
+  btn.textContent = 'Sending…'; btn.disabled = true;
+  try {
+    const r = await fetch(this.action, { method:'POST', body:new FormData(this), headers:{ Accept:'application/json' } });
+    if(r.ok) { this.style.display='none'; document.getElementById('fOk').style.display='block'; }
+    else { btn.textContent = 'Failed — please call us directly.'; btn.disabled = false; }
+  } catch { btn.textContent = 'Error — please call us.'; btn.disabled = false; }
+});
+</script>
+</body>
+</html>
